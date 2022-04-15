@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container" :class="{'famele_color': isColor}">
+            <ul>
+                <li class="danger" v-for="error in errors">
+                    {{ error.message }}
+                </li>
+            </ul>
+            <form @input="validate">
+                <input data-validate="required" type="text" name="firstname">Ім'я<br>
+                <input data-validate="required" type="text" name="lastname">Прізвище<br>
+                <label>Стать<br>
+                    <input @change="changeColor" v-model="gender" type="radio" name="gender" value="male">Чоловіча
+                    <input @change="changeColor"  v-model="gender" type="radio" name="gender" value="famele">Жіноча
+                </label><br>
+                <input data-validate="phone" type="text" name="phone">Телефон<br>
+                <input type="nik">Нік<br>
+            </form>
+        </div>
+    <ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+    <style>
+        .danger {
+            color: red;
+        }
+        body, ul {
+            margin: 0;
+            padding: 0;
+            border: 0;   
+        }
+
+        .container {
+            min-height: 100vh;
+            background-color: lightblue;
+        }
+
+        .famele_color {
+            background-color: lightcyan;
+        }
+    </style>
+</body>
+</html>
