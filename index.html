@@ -15,14 +15,14 @@
                 </li>
             </ul>
             <form @input="validate">
-                <input data-validate="required" type="text" name="firstname">Ім'я<br>
-                <input data-validate="required" type="text" name="lastname">Прізвище<br>
+                <input v-model="firstname" data-validate="required" type="text" name="firstname">Ім'я<br>
+                <input v-model="lastname" data-validate="required" type="text" name="lastname">Прізвище<br>
                 <label>Стать<br>
                     <input @change="changeColor" v-model="gender" type="radio" name="gender" value="male">Чоловіча
-                    <input @change="changeColor"  v-model="gender" type="radio" name="gender" value="famele">Жіноча
+                    <input @change="changeColor" v-model="gender" type="radio" name="gender" value="famele">Жіноча
                 </label><br>
-                <input data-validate="phone" type="text" name="phone">Телефон<br>
-                <input type="nik">Нік<br>
+                <input v-model="phone" data-validate="phone" type="text" name="phone">Телефон<br>
+                <input v-model="nik" data-validate="nik" type="text" name="nik">Нік<br>
             </form>
         </div>
     <ul>
@@ -41,7 +41,6 @@
 
         .container {
             min-height: 100vh;
-            background-color: lightblue;
         }
 
         .famele_color {
